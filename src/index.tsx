@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Header from "./components/header/Header";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import TopicPage from "./pages/topic-page/TopicPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Header/>
+          <div className="background">
+              <Routes>
+                  <Route path="/" element={<TopicPage/>}/>
+                  <Route path="/:categoryIdx" element={<TopicPage/>}/>
+              </Routes>
+          </div>
+      </BrowserRouter>
   </React.StrictMode>
 );
 

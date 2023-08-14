@@ -1,0 +1,21 @@
+.header_top {
+    background-color: var(--maincolor);
+    position: relative;
+    height: 3.2rem;
+}
+.header_top .top_inner {
+    max-width: 1110px;
+    margin: 0 auto;
+    color: #ffffff;
+    display: flex;
+    line-height: 3.2rem;
+    justify-content: space-between;
+}
+.header_top .top_inner .top_inner_right {
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+.header_top .top_inner .top_inner_left {
+    font-size: 1.6rem;
+    margin-left: 10px;
+}
