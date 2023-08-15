@@ -13,6 +13,7 @@
 }
 .header_bottom .header_bottom_inner .header_bottom_card {
     margin-right: 2rem;
+    cursor: pointer;
 }
 .header_bottom .header_bottom_inner .header_bottom_card:first-child {
     margin-left: 10px;

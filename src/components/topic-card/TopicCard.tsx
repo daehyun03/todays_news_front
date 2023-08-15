@@ -1,13 +1,14 @@
 import './TopicCard.css'
+import {Topic} from "../../config";
 
-export default function TopicCard() {
+export default function TopicCard(topic:Topic) {
     return(
         <div className="card_body">
             <div className="card_body_left">
-                사진자리
+                <img className="card_body_img" src={topic.title_img} alt="이미지 없음" />
             </div>
             <div className="card_body_right">
-                글자리
+                {topic.title}
             </div>
         </div>
     )

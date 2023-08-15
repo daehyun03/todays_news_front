@@ -5,21 +5,36 @@ import reportWebVitals from './reportWebVitals';
 import Header from "./components/header/Header";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import TopicPage from "./pages/topic-page/TopicPage";
+import {QueryClient, QueryClientProvider} from "react-query";
+
+const queryClient = new QueryClient(
+    {
+        defaultOptions: {
+            queries: {
+                refetchOnMount: false,
+                refetchOnReconnect: false,
+                refetchOnWindowFocus: false,
+            }
+        }
+    }
+)
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
-          <Header/>
-          <div className="background">
-              <Routes>
-                  <Route path="/" element={<TopicPage/>}/>
-                  <Route path="/:categoryIdx" element={<TopicPage/>}/>
-              </Routes>
-          </div>
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+              <Header/>
+              <div className="background">
+                  <Routes>
+                      <Route path="/" element={<TopicPage/>}/>
+                      <Route path="/:categoryIdx" element={<TopicPage/>}/>
+                  </Routes>
+              </div>
+          </BrowserRouter>
+      </QueryClientProvider>
   </React.StrictMode>
 );
 

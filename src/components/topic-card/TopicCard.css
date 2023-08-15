@@ -1,20 +1,23 @@
 .card_body {
-    text-align: center;
-    margin-top: 3rem;
     background-color: #ffffff;
     width: 100%;
     display: flex;
-    height: 25%;
-    min-height: 7rem;
-    line-height: 7rem;
+    height: 10rem;
+    line-height: 10rem;
+    border-bottom: 4px solid #f4f6f8;
 }
 .card_body_left {
+    text-align: center;
     width: 20%;
-    background-color: black;
-    height: 80%;
-    color: white;
     margin-right: 2rem;
 }
 .card_body_right {
     width: 80%;
+    font-size: 1.4rem;
+}
+.card_body_img {
+    margin: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 }

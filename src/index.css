@@ -16,6 +16,7 @@ body {
 a {
     text-decoration: none;
     color: #000000;
+    cursor: pointer;
 }
 @font-face {
     font-family: 'NanumSquareNeo-Variable';
@@ -35,4 +36,8 @@ ul {
     max-width: 1060px;
     margin: 0 auto;
     padding-top: 2rem;
+}
+.container .category_name {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
 }
