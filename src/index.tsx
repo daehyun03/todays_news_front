@@ -4,8 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Header from "./components/header/Header";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import TopicPage from "./pages/topic-page/TopicPage";
+import TopicPage from "./pages/TopicPage";
 import {QueryClient, QueryClientProvider} from "react-query";
+import TopicDetailPage from "./pages/TopicDetailPage";
 
 const queryClient = new QueryClient(
     {
@@ -31,6 +32,7 @@ root.render(
                   <Routes>
                       <Route path="/" element={<TopicPage/>}/>
                       <Route path="/:categoryIdx" element={<TopicPage/>}/>
+                      <Route path="/topic-page/:topicId" element={<TopicDetailPage/>}/>
                   </Routes>
               </div>
           </BrowserRouter>
