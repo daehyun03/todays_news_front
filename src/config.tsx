@@ -14,3 +14,12 @@ export interface Topic {
 }
 
 export const BaseURL = "http://192.168.0.8:8081"
+
+export default async function GetServerData(url:string) {
+    const topicData = await fetch(url)
+    return topicData.json()
+}
+
+export interface News {
+    title:string, url:string
+}

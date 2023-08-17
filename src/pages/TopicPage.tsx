@@ -1,4 +1,4 @@
-import {BaseURL, Categories, Detail, Topic} from "../config";
+import GetServerData, {BaseURL, Categories, Detail, Topic} from "../config";
 import TopicCard from "../components/topic-card/TopicCard";
 import {useQuery} from 'react-query';
 import {usePageStore} from "../store";
@@ -15,9 +15,10 @@ const dummyTopic:Topic = {
 export default function TopicPage() {
     const {cur} = usePageStore()
     const detail:Detail = Categories[cur]
-    const {data, isLoading} =
-        useQuery("topics", () => GetServerData(detail.toServer))
-    if (isLoading) {
+    const reqURL = BaseURL + "/topic" + detail.toServer + '?t_date=2023-08-14'
+    const {data, isLoading, isError} =
+        useQuery(['topic', detail.name], () => GetServerData(reqURL))
+    if (isLoading || isError) {
         return(
             <div className="container">
                 <div className="category_name">{detail.name}</div>
@@ -35,8 +36,3 @@ export default function TopicPage() {
     )
 }
 
-async function GetServerData(url:string) {
-    const reqURL = BaseURL + "/topic" + url
-    const topicData = await fetch("reqURL")
-    return topicData.json()
-}

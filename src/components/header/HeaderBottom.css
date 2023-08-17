@@ -1,5 +1,6 @@
 .header_bottom {
     border-bottom: 1.5px solid #eeeeee;
+    background-color: #ffffff;
 }
 .header_bottom .header_bottom_inner {
     max-width: 1110px;

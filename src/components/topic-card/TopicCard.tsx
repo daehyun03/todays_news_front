@@ -1,6 +1,6 @@
 import './TopicCard.css'
 import {Topic} from "../../config";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function TopicCard(topic:Topic) {
     return(
@@ -10,7 +10,9 @@ export default function TopicCard(topic:Topic) {
                     <img className="card_body_img" src={topic.title_img} alt="이미지 없음" />
                 </div>
                 <div className="card_body_right">
-                    {topic.title}
+                    <span className="topic_title">
+                        {topic.title}
+                    </span>
                 </div>
             </div>
         </Link>
